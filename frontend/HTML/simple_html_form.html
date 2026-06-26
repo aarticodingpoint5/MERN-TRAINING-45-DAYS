@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMPLE FORM</title>
+</head>
+<Script>
+   function validateForm()
+{
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    let namePattern = /^[A-Za-z ]+$/;
+    let phonePattern = /^\+91[0-9]{10}$/;
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let passwordPattern =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&*!]).{8,}$/;
+
+    // Name Validation
+    if(!namePattern.test(name))
+    {
+        alert("Enter valid name");
+        return false;
+    }
+
+    // Phone Validation
+    if(!phonePattern.test(phone))
+    {
+        alert("Enter valid 10 digit phone number");
+        return false;
+    }
+
+    // Email Validation
+    if(!emailPattern.test(email))
+    {
+        alert("Enter valid email");
+        return false;
+    }
+
+    // Password Validation
+    if(!passwordPattern.test(password))
+    {
+        alert("Password must contain uppercase, lowercase, number and special character");
+        return false;
+    }
+
+    alert("Form Submitted Successfully");
+    return true;
+}
+</Script>
+<body>
+    <form onsubmit="returnValidateForm()">
+        <lable>Name:</lable>
+        <input type="text" id="Name" placeholder="Enter Your Name"><br><br>
+
+        <lable> Phone Number:</lable>
+        <input type="text" id="Phone Number" placeholder="Enter Your Phone Number"><br><br>
+
+        lable>Email:</lable>
+        <input type="text" id="Email" placeholder="Enter Your Email"><br><br>
+
+        lable>name:</lable>
+        <input type="text" id="Password" placeholder="Enter Your Password"><br><br>
+    </form>
+
+    
+    
+</body>
+</html>
