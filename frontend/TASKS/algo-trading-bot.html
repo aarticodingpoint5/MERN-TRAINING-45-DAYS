@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algo Trading Bot Simulator</title>
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-4">
+
+    <h1 class="text-center mb-4">Algo Trading Bot Simulator</h1>
+
+    <!-- Events -->
+    <div class="text-center mb-3">
+        <button id="startBtn" class="btn btn-success me-2">
+            Start Simulation
+        </button>
+
+        <button id="resetBtn" class="btn btn-danger">
+            Reset
+        </button>
+    </div>
+
+    <!-- Output Table -->
+    <table class="table table-bordered table-striped text-center">
+        <thead>
+            <tr>
+                <th>Round</th>
+                <th>Price</th>
+                <th>Action</th>
+                <th>Balance</th>
+                <th>Holdings</th>
+            </tr>
+        </thead>
+
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <!-- Summary -->
+    <div id="summary" class="mt-4"></div>
+
+</div>
+
+<script>
+
+/* ===================================
+   VARIABLES
+=================================== */
+
+let balance = 1000;
+let holdings = 0;
+let stockPrice = 100;
+
+/* ===================================
+   ARRAY
+   Stores complete trade history
+=================================== */
+
+let tradeHistory = [];
+
+/* ===================================
+   FUNCTION
+   Generate Random Stock Price
+=================================== */
+
+function updatePrice() {
+    return Math.floor(Math.random() * (120 - 80 + 1)) + 80;
+}
+
+/* ===================================
+   FUNCTION + CONDITIONS
+   Decide Buy / Sell / Hold
+=================================== */
+
+function decideAction(price) {
+
+    if (price < 90 && balance >= price) {
+        return "BUY";
+    }
+
+    else if (price > 110 && holdings > 0) {
+        return "SELL";
+    }
+
+    else {
+        return "HOLD";
+    }
+}
+
+/* ===================================
+   FUNCTION
+   Execute Trade
+=================================== */
+
+function executeTrade(action) {
+
+    if (action === "BUY") {
+        balance -= stockPrice;
+        holdings++;
+    }
+
+    else if (action === "SELL") {
+        balance += stockPrice;
+        holdings--;
+    }
+}
+
+/* ===================================
+   FUNCTION
+   Start Simulation
+=================================== */
+
+function startSimulation() {
+
+    document.getElementById("tableBody").innerHTML = "";
+    tradeHistory = [];
+
+    /* LOOP */
+
+    for(let round = 1; round <= 10; round++) {
+
+        stockPrice = updatePrice();
+
+        let action = decideAction(stockPrice);
+
+        executeTrade(action);
+
+        /* OBJECT */
+
+        let trade = {
+            round: round,
+            price: stockPrice,
+            action: action,
+            balance: balance,
+            holdings: holdings
+        };
+
+        /* ARRAY METHOD */
+
+        tradeHistory.push(trade);
+    }
+
+    displayResult();
+}
+
+/* ===================================
+   FUNCTION
+   Display Data Using DOM
+=================================== */
+
+function displayResult() {
+
+    let tableBody = document.getElementById("tableBody");
+
+    /* ARRAY METHOD */
+
+    tradeHistory.forEach(function(trade){
+
+        tableBody.innerHTML += `
+        <tr>
+            <td>${trade.round}</td>
+            <td>${trade.price}</td>
+            <td>${trade.action}</td>
+            <td>${trade.balance}</td>
+            <td>${trade.holdings}</td>
+        </tr>`;
+    });
+
+    /* ARRAY METHODS */
+
+    let buyCount =
+    tradeHistory.filter(trade =>
+        trade.action === "BUY"
+    ).length;
+
+    let sellCount =
+    tradeHistory.filter(trade =>
+        trade.action === "SELL"
+    ).length;
+
+    document.getElementById("summary").innerHTML = `
+        <div class="card">
+            <div class="card-body">
+                <h4>Simulation Summary</h4>
+
+                <p><strong>Final Balance:</strong> ₹${balance}</p>
+
+                <p><strong>Holdings:</strong> ${holdings}</p>
+
+                <p><strong>Total Buys:</strong> ${buyCount}</p>
+
+                <p><strong>Total Sells:</strong> ${sellCount}</p>
+            </div>
+        </div>
+    `;
+}
+
+/* ===================================
+   EVENTS
+=================================== */
+
+document
+.getElementById("startBtn")
+.addEventListener("click", startSimulation);
+
+document
+.getElementById("resetBtn")
+.addEventListener("click", function(){
+
+    balance = 1000;
+    holdings = 0;
+    stockPrice = 100;
+    tradeHistory = [];
+
+    document.getElementById("tableBody").innerHTML = "";
+    document.getElementById("summary").innerHTML = "";
+});
+
+</script>
+
+</body>
+</html>
