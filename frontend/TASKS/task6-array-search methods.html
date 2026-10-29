@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Result Analyzer</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f2f2f2;
+    padding:20px;
+}
+
+h1{
+    text-align:center;
+    color:#eb25bd;
+}
+.box{
+    background:white;
+    margin:15px 0;
+    padding:15px;
+    border-left:6px solid #eb25bd;
+    box-shadow:0 0 5px rgb(128, 128, 128);
+}
+
+h3{
+    color:#eb25bd;
+}
+</style>
+
+</head>
+<body>
+
+<h1>School Result Analyzer</h1>
+
+<div id="output"></div>
+
+<script>
+
+const output=document.getElementById("output");
+
+function show(title,result){
+    output.innerHTML+=`
+    <div class="box">
+        <h3>${title}</h3>
+        <p>${result}</p>
+    </div>
+    `;
+}
+
+// Arrays
+let students=["Rahul","Priya","Aman","Rahul","Neha"];
+let marks=[25,35,45,60,75];
+
+show("Students",students.join(", "));
+show("Marks",marks.join(", "));
+
+// 1. indexOf()
+let firstRahul=students.indexOf("Rahul");
+show("1. indexOf()",`First Rahul is at index ${firstRahul}`);
+
+// 2. lastIndexOf()
+let lastRahul=students.lastIndexOf("Rahul");
+show("2. lastIndexOf()",`Last Rahul is at index ${lastRahul}`);
+
+// 3. includes()
+let enrolled=students.includes("Neha");
+show("3. includes()",`Neha is enrolled : ${enrolled}`);
+
+// 4. find()
+let firstPass=marks.find(mark=>mark>40);
+show("4. find()",`First passing marks : ${firstPass}`);
+
+// 5. findIndex()
+let firstPassIndex=marks.findIndex(mark=>mark>40);
+show("5. findIndex()",`First passing student index : ${firstPassIndex}`);
+
+// 6. findLast()
+let lastAbove50=marks.findLast(mark=>mark>50);
+show("6. findLast()",`Last student scoring above 50 : ${lastAbove50}`);
+
+// 7. findLastIndex()
+let lastPassIndex=marks.findLastIndex(mark=>mark>40);
+show("7. findLastIndex()",`Last passing student index : ${lastPassIndex}`);
+
+</script>
+
+</body>
+</html>

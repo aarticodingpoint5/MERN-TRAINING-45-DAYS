@@ -1,0 +1,481 @@
+/* ===========================
+   Google Font & Reset
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f7f7f7;
+    color:#222;
+}
+
+/* ===========================
+   Header
+=========================== */
+
+header{
+    width:100%;
+    background:#111;
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+}
+
+.logo h1{
+    color:#ff8c00;
+    font-size:34px;
+    font-weight:700;
+}
+
+.logo p{
+    font-size:14px;
+    color:#ddd;
+}
+
+nav{
+    display:flex;
+    gap:22px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#fff;
+    font-size:16px;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ff8c00;
+}
+
+/* ===========================
+   Hero Section
+=========================== */
+
+.hero{
+    height:80vh;
+    background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url("images/burger.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#fff;
+    padding:20px;
+}
+
+.hero-text h2{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    font-size:18px;
+    line-height:1.8;
+    max-width:700px;
+}
+
+/* ===========================
+   Menu Section
+=========================== */
+
+.menu{
+    padding:70px 8%;
+}
+
+.menu h2{
+    text-align:center;
+    font-size:38px;
+    color:#ff7a00;
+    margin-bottom:40px;
+}
+
+.menu h2::after{
+    content:"";
+    display:block;
+    width:80px;
+    height:4px;
+    background:#ff7a00;
+    margin:10px auto;
+    border-radius:20px;
+}
+
+.meal-title{
+    text-align:center;
+    margin:40px 0 20px;
+    font-size:28px;
+}
+
+/* ===========================
+   Menu Card
+=========================== */
+
+.menu-card{
+    background:#fff;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+    margin-bottom:30px;
+}
+
+.item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8px;
+    border-bottom:1px dashed #ccc;
+    transition:.3s;
+}
+
+.item:last-child{
+    border-bottom:none;
+}
+
+.item:hover{
+    background:#fff3e6;
+    transform:translateX(6px);
+}
+
+.item span:first-child{
+    font-weight:500;
+}
+
+.item span:last-child{
+    color:#ff7a00;
+    font-weight:bold;
+    font-size:18px;
+}
+/* ===========================
+   Delivery Section
+=========================== */
+
+.delivery{
+    margin:70px 8%;
+    background:linear-gradient(135deg,#ff8c00,#ff5e00);
+    color:#fff;
+    text-align:center;
+    padding:50px 30px;
+    border-radius:20px;
+    box-shadow:0 12px 30px rgba(0,0,0,.2);
+}
+
+.delivery h2{
+    font-size:36px;
+    margin-bottom:15px;
+}
+
+.delivery p{
+    font-size:18px;
+    line-height:1.8;
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+footer{
+    background:#111;
+    color:#fff;
+    text-align:center;
+    padding:35px 20px;
+    margin-top:60px;
+}
+
+footer h2{
+    color:#ff8c00;
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+footer p{
+    color:#ddd;
+    margin:8px 0;
+    font-size:15px;
+}
+
+/* ===========================
+   Scrollbar
+=========================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#f1f1f1;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#ff8c00;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#ff6200;
+}
+
+/* ===========================
+   Animation
+=========================== */
+
+.menu-card{
+    animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.hero-text h2{
+    animation:slideDown 1s ease;
+}
+
+@keyframes slideDown{
+
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ===========================
+   Hover Effects
+=========================== */
+
+.logo h1{
+    transition:.3s;
+}
+
+.logo h1:hover{
+    transform:scale(1.05);
+}
+
+.menu h2{
+    transition:.3s;
+}
+
+.menu h2:hover{
+    color:#ff5e00;
+    letter-spacing:2px;
+}
+
+.menu-card{
+    transition:.4s;
+}
+
+.menu-card:hover{
+    transform:translateY(-6px);
+}
+
+.delivery{
+    transition:.4s;
+}
+
+.delivery:hover{
+    transform:scale(1.02);
+}
+
+footer h2{
+    transition:.3s;
+}
+
+footer h2:hover{
+    letter-spacing:2px;
+}
+/* ===========================
+   Responsive Design
+=========================== */
+
+@media (max-width:992px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+        padding:20px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .hero{
+        height:65vh;
+    }
+
+    .hero-text h2{
+        font-size:42px;
+    }
+
+    .hero-text p{
+        font-size:16px;
+        max-width:90%;
+    }
+
+    .menu{
+        padding:50px 5%;
+    }
+
+    .menu h2{
+        font-size:32px;
+    }
+
+    .delivery{
+        margin:50px 5%;
+        padding:40px 20px;
+    }
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+
+@media (max-width:992px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+        padding:20px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .hero{
+        height:65vh;
+    }
+
+    .hero-text h2{
+        font-size:42px;
+    }
+
+    .hero-text p{
+        font-size:16px;
+        max-width:90%;
+    }
+
+    .menu{
+        padding:50px 5%;
+    }
+
+    .menu h2{
+        font-size:32px;
+    }
+
+    .delivery{
+        margin:50px 5%;
+        padding:40px 20px;
+    }
+}
+
+@media (max-width:768px){
+
+    .logo h1{
+        font-size:28px;
+        text-align:center;
+    }
+
+    .logo p{
+        text-align:center;
+    }
+
+    nav{
+        gap:10px;
+    }
+
+    nav a{
+        font-size:14px;
+    }
+
+    .hero{
+        height:55vh;
+    }
+
+    .hero-text h2{
+        font-size:34px;
+    }
+
+    .hero-text p{
+        font-size:15px;
+        line-height:1.6;
+    }
+
+    .menu h2{
+        font-size:28px;
+    }
+
+    .meal-title{
+        font-size:22px;
+    }
+
+    .menu-card{
+        padding:18px;
+    }
+
+    .item{
+        font-size:15px;
+        padding:14px 6px;
+    }
+
+    .item span:last-child{
+        font-size:16px;
+    }
+
+    .delivery h2{
+        font-size:28px;
+    }
+
+    .delivery p{
+        font-size:16px;
+    }
+
+    footer h2{
+        font-size:26px;
+    }
+}
+
+@media (max-width:480px){
+
+    header{
+        padding:15px;
+    }
+
+    .hero{
+        height:50vh;
+    }
+}

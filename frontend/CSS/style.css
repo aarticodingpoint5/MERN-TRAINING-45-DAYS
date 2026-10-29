@@ -1,0 +1,748 @@
+/* ==================================================
+        SKILL HUB LMS
+        DAY 1  PART 1
+================================================== */
+
+/* ================= GLOBAL STYLES ================= */
+
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial, sans-serif;
+    background:#f4f8fc;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    background:#1e293b;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+h1{
+    font-size:36px;
+    margin-bottom:10px;
+}
+
+header p{
+    color:white;
+    font-size:18px;
+}
+
+/* ================= NAVIGATION ================= */
+
+nav{
+    background:#2563eb;
+    text-align:center;
+    padding:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#facc15;
+}
+
+/* ================= COMMON SECTION ================= */
+
+section{
+    background:white;
+    margin:20px;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ================= HEADINGS ================= */
+
+h2{
+    color:#1e3a8a;
+    font-size:40px;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+p{
+    font-size:18px;
+    color:#555;
+    line-height:1.6;
+    text-align:center;
+}
+
+/* ================= HERO SECTION ================= */
+
+.hero{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h2{
+    font-size:42px;
+}
+
+.hero p{
+    margin-top:15px;
+}
+
+/* ================= HERO IMAGE ================= */
+
+.hero img{
+    width:300px;
+    max-width:100%;
+    display:block;
+    margin:40px auto;
+    border-radius:12px;
+}
+
+/* ================= BUTTON GROUP ================= */
+
+.button-group{
+    margin-top:25px;
+}
+
+/* ================= BUTTONS ================= */
+
+.btn{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    margin:10px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+    font-size:16px;
+}
+
+.btn:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}
+
+/* ================= ABOUT SECTION ================= */
+
+#about{
+    text-align:center;
+}
+
+#about p{
+    max-width:800px;
+    margin:auto;
+}
+
+/* ==================================================
+        DAY 4 - FLEXBOX & COURSE CARDS
+================================================== */
+
+/* ================= COURSES SECTION ================= */
+
+#courses{
+    text-align:center;
+}
+
+.course-container{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+/* ================= COURSE CARDS ================= */
+
+.card{
+    width:260px;
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    color:#1e3a8a;
+    margin-bottom:10px;
+}
+
+.card p{
+    font-size:16px;
+    color:#555;
+}
+
+/* ==================================================
+        DAY 4 PART 1
+        BOX MODEL DEMO
+================================================== */
+
+.box-model-demo{
+    text-align:center;
+    padding:40px;
+}
+
+.demo-box{
+    width:300px;
+    margin:30px auto;
+    padding:20px;
+    background:lightblue;
+    border:5px solid black;
+    border-radius:15px;
+    font-weight:bold;
+}
+
+/* ==================================================
+        STUDENT CARDS
+================================================== */
+
+.student-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.student-card{
+    width:250px;
+    background:white;
+    border:2px solid gray;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.student-card:hover{
+    transform:translateY(-8px);
+}
+
+.student-card img{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    border-radius:50%;
+    margin-bottom:15px;
+}
+
+.student-card h3{
+    color:#1e3a8a;
+    margin-bottom:10px;
+}
+
+.student-card p{
+    margin:5px 0;
+    font-size:16px;
+}
+
+/* ==================================================
+        DAY 4 PART 3
+        FEATURES SECTION
+================================================== */
+
+.features{
+    background:#f5f9ff;
+    padding:60px 20px;
+    text-align:center;
+}
+
+.feature-container{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.feature{
+    width:250px;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.feature:hover{
+    transform:scale(1.05);
+}
+
+.feature h3{
+    color:#1e3a8a;
+    margin-bottom:10px;
+}
+
+.feature p{
+    color:#555;
+    font-size:16px;
+}
+
+/* ==================================================
+        CTA SECTION
+================================================== */
+
+.cta{
+    background:#0d47a1;
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.cta h2{
+    color:white;
+}
+
+.cta-btn{
+    margin-top:20px;
+    padding:12px 30px;
+    background:white;
+    color:#0d47a1;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.cta-btn:hover{
+    background:#ffd54f;
+    color:black;
+    transform:scale(1.05);
+}
+
+/* ==================================================
+        CONTACT SECTION
+================================================== */
+
+#contact{
+    text-align:center;
+}
+
+/* ==================================================
+        FOOTER
+================================================== */
+
+footer{
+    background:#1e293b;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+footer p{
+    color:white;
+    margin:0;
+}
+/* ==================================================
+                DAY 5 - PART 1
+         RESPONSIVE WEB DESIGN BASICS
+================================================== */
+
+/* Responsive Hero Image */
+
+.hero-image{
+    width:100%;
+    height:auto;
+    display:block;
+    max-width:900px;
+    margin:30px auto;
+    border-radius:12px;
+}
+
+/* Smooth Layout */
+
+*{
+    box-sizing:border-box;
+}
+
+/* Prevent Horizontal Scroll */
+
+html,
+body{
+    overflow-x:hidden;
+}
+
+/* Main Container */
+
+main{
+    width:100%;
+}
+
+/* Sections */
+
+section{
+    width:100%;
+}
+
+/* Course Cards */
+
+.card{
+    max-width:260px;
+}
+
+/* Feature Cards */
+
+.feature{
+    max-width:260px;
+}
+
+/* Student Cards */
+
+.student-card{
+    max-width:260px;
+}
+/* ==================================================
+                DAY 5 - PART 2
+              MEDIA QUERIES
+================================================== */
+
+@media (max-width: 768px) {
+
+    /* Hero Heading */
+
+    .hero h2{
+        font-size:28px;
+    }
+
+    /* Navigation */
+
+    nav{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+    }
+
+    nav a{
+        margin:5px 0;
+    }
+
+    /* Hero Section */
+
+    .hero{
+        padding:40px 15px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    /* Buttons */
+
+    .button-group{
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+        background:none;
+        padding:0;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    /* Course Cards */
+
+    .course-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .card{
+        width:100%;
+        max-width:350px;
+    }
+
+    /* Feature Cards */
+
+    .feature-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .feature{
+        width:100%;
+        max-width:350px;
+    }
+
+    /* Student Cards */
+
+    .student-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .student-card{
+        width:100%;
+        max-width:350px;
+    }
+
+    /* CTA */
+
+    .cta-btn{
+        width:100%;
+        max-width:300px;
+    }
+
+    /* Box Model Demo */
+
+    .demo-box{
+        width:90%;
+    }
+
+    /* Images */
+
+    .hero-image{
+        width:100%;
+        height:auto;
+    }
+
+}
+/* ==================================================
+                DAY 5 - PART 3
+     COMPLETE RESPONSIVE LANDING PAGE
+================================================== */
+
+@media (max-width:768px){
+
+    /* Hero Section */
+
+    .hero{
+        padding:30px 15px;
+    }
+
+    .hero h2{
+        font-size:26px;
+        line-height:1.4;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    /* Buttons */
+
+    .button-group{
+        display:flex;
+        flex-direction:column;
+        gap:12px;
+    }
+
+    .btn,
+    .cta-btn{
+        width:100%;
+    }
+
+    /* Navigation */
+
+    nav{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:12px;
+    }
+
+    nav a{
+        margin:5px 0;
+    }
+
+    /* Course Cards */
+
+    .course-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .card{
+        width:100%;
+        max-width:350px;
+    }
+
+    /* Feature Cards */
+
+    .feature-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .feature{
+        width:100%;
+        max-width:350px;
+    }
+
+    /* About Section */
+
+    #about{
+        margin:20px;
+        padding:20px;
+    }
+
+    /* Contact Section */
+
+    #contact{
+        margin:20px;
+        padding:20px;
+    }
+
+    /* Student Cards */
+
+    .student-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .student-card{
+        width:100%;
+        max-width:350px;
+    }
+
+    /* Box Model */
+
+    .demo-box{
+        width:90%;
+    }
+
+    /* Images */
+
+    img,
+    .hero-image{
+        width:100%;
+        height:auto;
+        display:block;
+    }
+
+    /* Footer */
+
+    footer{
+        font-size:16px;
+        padding:20px;
+    }
+
+}
+.profile-card{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+    padding:25px;
+    margin:30px;
+    background:white;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* ===========================
+   PROFILE CARD
+=========================== */
+
+.profile-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    background: #ffffff;
+    margin: 40px 20px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.profile-card img{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #2563eb;
+}
+
+.profile-info{
+    text-align: left;
+}
+
+.profile-info h3{
+    font-size: 30px;
+    color: #1e3a8a;
+    margin-bottom: 15px;
+}
+
+.profile-info p{
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.profile-info .btn{
+    margin-top: 20px;
+    padding: 12px 30px;
+}
+
+/* ===========================
+   MOBILE RESPONSIVE
+=========================== */
+
+@media (max-width:768px){
+
+    .profile-card{
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+        gap: 20px;
+    }
+
+    .profile-card img{
+        width: 140px;
+        height: 140px;
+    }
+
+    .profile-info{
+        text-align: center;
+    }
+
+    .profile-info h3{
+        font-size: 26px;
+    }
+
+    .profile-info p{
+        text-align: center;
+        font-size: 17px;
+    }
+
+    .profile-info .btn{
+        width: 100%;
+        max-width: 250px;
+    }
+
+}
+body.dark-  mode{
+    background-color: #1e293b;
+    color: #f4f8fc;
+}body.dark-mode header{
+    background-color: #0d1b2a;
+}body.dark-mode nav{
+    background-color: #1e293b;
+}body.dark-mode .btn{
+    background-color: #2563eb;
+    color: #f4f8fc;
+}body.dark-mode .btn:hover{
+    background-color: #1d4ed8;
+}body.dark-mode .card,body.dark-mode .feature,
+body.dark-mode .student-card,
+body.dark-mode .profile-card{
+    background-color: #2c3e50;
+    color: #f4f8fc;
+}

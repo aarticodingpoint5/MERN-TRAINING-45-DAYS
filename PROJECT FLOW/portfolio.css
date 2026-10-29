@@ -1,0 +1,9 @@
+/* ==================================================
+        MY PORTFOLIO
+/* =================  STYLES ================= */
+body{
+    margin: 50px;;
+    padding: 80px;
+    font-family:Arial, sans-serif;
+    background:lab(97.23% 0.01 -0.01);
+}

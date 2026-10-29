@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Bookstore Array Management</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background:#f4f4f4;
+        padding:20px;
+    }
+
+    h1{
+        text-align:center;
+        color:#333;
+    }
+
+    .box{
+        background:white;
+        padding:15px;
+        margin:15px 0;
+        border-left:6px solid rgb(65, 188, 225);
+        box-shadow:0 0 5px gray;
+    }
+
+    h3{
+        color:royalblue;
+    }
+
+    p{
+        margin:6px 0;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>📚 Online Bookstore Array Management</h1>
+
+<div id="output"></div>
+
+<script>
+
+let output=document.getElementById("output");
+
+function show(title,data){
+
+    output.innerHTML+=`
+    <div class="box">
+        <h3>${title}</h3>
+        <p>${data}</p>
+    </div>
+    `;
+
+}
+
+// 1. Start with array
+let books=["Math","Science","English"];
+show("1. Original Books",books);
+
+// 2. push()
+books.push("Computer");
+show("2(a). After push()",books);
+
+// unshift()
+books.unshift("History");
+show("2(b). After unshift()",books);
+
+// 3. pop()
+books.pop();
+show("3(a). After pop()",books);
+
+// shift()
+books.shift();
+show("3(b). After shift()",books);
+
+// 4. splice()
+books.splice(1,1,"Physics");
+show("4. After splice() (Science replaced with Physics)",books);
+
+// 5. concat()
+let newBooks=["Biology","Chemistry"];
+let mergedBooks=books.concat(newBooks);
+show("5. After concat()",mergedBooks);
+
+// 6. copyWithin()
+let copied=[...mergedBooks];
+copied.copyWithin(2,0,2);
+show("6. After copyWithin()",copied);
+
+// 7. flat()
+let categories=[
+    ["Math","Science"],
+    ["English","History"],
+    ["Computer"]
+];
+
+let flatCategories=categories.flat();
+show("7. After flat()",flatCategories);
+
+// 8. slice()
+let displayBooks=mergedBooks.slice(1,4);
+show("8. slice() (Books for Display)",displayBooks);
+
+// 9. toString()
+show("9(a). toString()",mergedBooks.toString());
+
+// join()
+show("9(b). join(' | ')",mergedBooks.join(" | "));
+
+// 10. length
+show("10. Total Number of Books",mergedBooks.length);
+
+// 11. Update by index
+mergedBooks[0]="Advanced Math";
+show("11. Updated First Book",mergedBooks);
+
+// 12. forEach()
+let list="";
+
+mergedBooks.forEach(function(book,index){
+
+    list+=`Book ${index+1}: ${book}<br>`;
+
+});
+
+show("12. forEach() Display",list);
+
+</script>
+
+</body>
+</html>
